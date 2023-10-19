@@ -31,22 +31,20 @@ function playRound(playerSelection, computerSelection, counter) {
         console.log("Game " + counter + ": You Win! Paper beats Rock");
     }
     else if (computerSelection === player){
-        console.log("Game " + counter + ": You Tie!" + computerSelection);
+        console.log("Game " + counter + ": You Tie!");
     }
     else {
         console.log("Please enter a valid option");
     }
 }
 
-const computerSelection = getComputerChoice();
-const playerSelection = prompt("Enter either rock, paper, or scissors");
-console.log(playRound(playerSelection, computerSelection));
-
 function game() {
     counter = 1;
     while (counter <= 5) {
         counter++;
-        playRound(playerSelection, computerSelection, counter);
+        const computerSelection = getComputerChoice();
+        const playerSelection = prompt("Enter either rock, paper, or scissors");
+        console.log(playRound(playerSelection, computerSelection));
     }
 }
 
